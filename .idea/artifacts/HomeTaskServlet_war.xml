@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="HomeTaskServlet:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>HomeTaskServlet</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="L2LoginEE-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="HomeTaskServlet:war exploded" />
+    </root>
+  </artifact>
+</component>

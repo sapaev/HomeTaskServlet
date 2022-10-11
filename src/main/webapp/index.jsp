@@ -8,10 +8,10 @@
 </head>
 <body>
 
-<% String finish = (String)session.getAttribute("user_answer"); %>
-<h1>ПРивет!</h1>
-<% if (finish == null || "".equals(finish)) { %>
-<form name="test" method="post" action="/questionnaire">
+<% String login = (String)session.getAttribute("user_answer"); %>
+
+<% if (login == null || "".equals(login)) { %>
+<form name="test" method="POST" action="/questionnaire">
     <h2>Укажите Ваше имя:</h2>
     <br>
     <label><input type="text" size="40" name="name"><br></label>
@@ -23,18 +23,18 @@
     <Br>
     <label><input type="radio" name="browser" value="a"> Internet Explorer</label>
     <Br>
-    <label><input type="radio" name="browser" value="b"> Opera</label>
+    <label><input type="radio" name="browser" value="b"> Chrome</label>
     <Br>
     <h2>Чистите ли Вы кэш перед работой:</h2>
     <Br>
-    <label><input type="radio" name="cash" value="a"> Да</label>
+    <label><input type="radio" name="cash" value="c"> Да</label>
     <Br>
-    <label><input type="radio" name="cash" value="b">  Нет</label>
+    <label><input type="radio" name="cash" value="d">  Нет</label>
     <Br>
     <h2>Используете ли Вы консоль разработчика:</h2><Br>
-    <label><input type="radio" name="devtools" value="a"> Да</label><
+    <label><input type="radio" name="devtools" value="e"> Да</label><
     Br>
-    <label><input type="radio" name="devtools" value="b"> Нет</label>
+    <label><input type="radio" name="devtools" value="f"> Нет</label>
     <Br>
     <label><input type="submit" name="send" length="50"></label>
 </form>
@@ -57,9 +57,8 @@ InternetExplorer:
 <% int devTools = Questionnaire.statisticOfВDevtoolsYes.size();%>
 <%System.out.println(devTools); %>
 
-<br>Click this link to <a href="/login?a=exit">Back</a>
+<br>Click this link to <a href="/questionnaire?a=exit">Back</a>
 
 <% } %>
-
 </body>
 </html>

@@ -1,5 +1,6 @@
 package com.example.hometaskservlet;
 
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -27,39 +28,42 @@ public class Questionnaire extends HttpServlet {
     private static int f=0;
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String q1 = request.getParameter("browser");
-        String q2 = request.getParameter("cash");
-        String q3 = request.getParameter("devtools");
-        String name=request.getParameter("name");
-        if ("a".equals(q1)) {
+        String q2 = request.getParameter("browser");
+        String q3 = request.getParameter("cash");
+        String q4 = request.getParameter("devtools");
+        String login=request.getParameter("name");
+        if ("a".equals(q1) && q1!=null) {
             statisticOfIE.put(a+1,"Internet Explorer");
         }
-            else{
+        if ("b".equals(q2) && q2!=null){
             statisticOfChromeE.put(b+1,"Gogle Chrome");
             }
-        if ("a".equals(q2)) {
+        if ("c".equals(q3) && q3!=null) {
             statisticOCashYes.put(c+1, "statisticOCashYes");
         }
-        if ("a".equals(q3)){
+        if ("e".equals(q4) && q4!=null){
             statisticOfВDevtoolsYes.put(f+1,"statisticOfВDevtoolsYes");
         }
 
             HttpSession session = request.getSession(true);
-            session.setAttribute("user_answer", name);
+            session.setAttribute("user_answer", login);
 
 
         response.sendRedirect("index.jsp");
     }
+
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String a = request.getParameter("a");
+       String a = request.getParameter("a");
         HttpSession session = request.getSession(false);
 
         if ("exit".equals(a) && (session != null))
             session.removeAttribute("user_answer");
 
-        response.sendRedirect("index.jsp");//
+        response.sendRedirect("index.jsp");
     }
 
 

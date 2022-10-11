@@ -26,22 +26,17 @@ public class Questionnaire extends HttpServlet {
     private static int c=0;
     private static int f=0;
 
-
-
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String q1 = request.getParameter("browser");
         String q2 = request.getParameter("cash");
         String q3 = request.getParameter("devtools");
         String name=request.getParameter("name");
-
-
         if ("a".equals(q1)) {
             statisticOfIE.put(a+1,"Internet Explorer");
         }
             else{
             statisticOfChromeE.put(b+1,"Gogle Chrome");
-
             }
         if ("a".equals(q2)) {
             statisticOCashYes.put(c+1, "statisticOCashYes");
@@ -56,9 +51,6 @@ public class Questionnaire extends HttpServlet {
 
         response.sendRedirect("index.jsp");
     }
-
-
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String a = request.getParameter("a");

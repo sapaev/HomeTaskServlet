@@ -1,7 +1,7 @@
 <%@ page import="com.example.hometaskservlet.Questionnaire" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html lang="en">
+<html>
 <head>
     <title>Тест</title>
 
@@ -13,12 +13,12 @@
 <% if (finish == null || "".equals(finish)) { %>
 <form name="test" method="post" action="/questionnaire">
     <h2>Укажите Ваше имя:</h2>
-        <br>
+    <br>
     <label><input type="text" size="40" name="name"><br></label>
     <h2>Укажите Ваше ФИО:</h2>
     <br>
     <label><input type="text" size="40"></label>
-        <br>
+    <br>
     <h2>Каким браузером в основном пользуетесь:</h2>
     <Br>
     <label><input type="radio" name="browser" value="a"> Internet Explorer</label>

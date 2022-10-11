@@ -8,10 +8,10 @@
 </head>
 <body>
 
-<% String login = (String)session.getAttribute("user_answer"); %>
+<% String login = (String)session.getAttribute("user_login"); %>
 
 <% if (login == null || "".equals(login)) { %>
-<form name="test" method="POST" action="/questionnaire">
+<form  method="POST" action="/login">
     <h2>Укажите Ваше имя:</h2>
     <br>
     <label><input type="text" size="40" name="name"><br></label>
@@ -40,7 +40,7 @@
 </form>
 <% } else{ %>
 <h1>Your answers: </h1>
-Каким браузером в основном пользуетесь:
+Каким браузером в основном пользуются:
 <Br>
 GoogleChrome:
 <% int sizeOfChrome = Questionnaire.statisticOfChromeE.size(); System.out.println(sizeOfChrome); %>
@@ -49,15 +49,15 @@ InternetExplorer:
 <% int sizeOfIE = Questionnaire.statisticOfIE.size(); %>
 <%System.out.println(sizeOfIE); %>
 <Br>
-Чистите ли Вы кэш перед работой:
-<% int cleanCash = Questionnaire.statisticOCashYes.size();%>
+Чиститят ли  кэш перед работой:
+<% int cleanCash = Questionnaire.statisticOCashYes.size(); %>
 <%System.out.println(cleanCash); %>
 <Br>
-Используете ли Вы консоль разработчика:
-<% int devTools = Questionnaire.statisticOfВDevtoolsYes.size();%>
-<%System.out.println(devTools); %>
+Используют ли  консоль разработчика:
+<% int devTools = Questionnaire.statisticOfDevtoolsYes.size(); %>
+<% System.out.println(devTools); %>
 
-<br>Click this link to <a href="/questionnaire?a=exit">Back</a>
+<br>Click this link to <a href="/login?a=exit">Back</a>
 
 <% } %>
 </body>

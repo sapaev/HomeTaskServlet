@@ -9,6 +9,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Questionnaire</servlet-name>
-        <url-pattern>/questionnaire</url-pattern>
+        <url-pattern>/login</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -67,7 +67,7 @@ public class Questionnaire extends HttpServlet {
         if ("exit".equals(a) && (session != null))
             session.removeAttribute("user_answer");
 
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("index.jsp");//
     }
 
 

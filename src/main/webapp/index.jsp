@@ -4,14 +4,13 @@
 <html>
 <head>
     <title>Тест</title>
-
 </head>
 <body>
 
-<% String login = (String)session.getAttribute("user_login"); %>
+<% String login = (String) session.getAttribute("user_login"); %>
 
 <% if (login == null || "".equals(login)) { %>
-<form  method="POST" action="/login">
+<form method="POST" action="/login">
     <h2>Укажите Ваше имя:</h2>
     <br>
     <label><input type="text" size="40" name="name"><br></label>
@@ -29,7 +28,7 @@
     <Br>
     <label><input type="radio" name="cash" value="c"> Да</label>
     <Br>
-    <label><input type="radio" name="cash" value="d">  Нет</label>
+    <label><input type="radio" name="cash" value="d"> Нет</label>
     <Br>
     <h2>Используете ли Вы консоль разработчика:</h2><Br>
     <label><input type="radio" name="devtools" value="e"> Да</label><
@@ -38,27 +37,26 @@
     <Br>
     <label><input type="submit" name="send" length="50"></label>
 </form>
-<% } else{ %>
+<% } else { %>
 <h1>Your answers: </h1>
 Каким браузером в основном пользуются:
 <Br>
 GoogleChrome:
-<% int sizeOfChrome = Questionnaire.statisticOfChromeE.size(); System.out.println(sizeOfChrome); %>
+<% int sizeOfChrome = Questionnaire.statisticOfChromeE.size();
+    System.out.println(sizeOfChrome); %>
 <Br>
 InternetExplorer:
 <% int sizeOfIE = Questionnaire.statisticOfIE.size(); %>
 <%System.out.println(sizeOfIE); %>
 <Br>
-Чиститят ли  кэш перед работой:
+Чиститят ли кэш перед работой:
 <% int cleanCash = Questionnaire.statisticOCashYes.size(); %>
 <%System.out.println(cleanCash); %>
 <Br>
-Используют ли  консоль разработчика:
+Используют ли консоль разработчика:
 <% int devTools = Questionnaire.statisticOfDevtoolsYes.size(); %>
 <% System.out.println(devTools); %>
-
 <br>Click this link to <a href="/login?a=exit">Back</a>
-
 <% } %>
 </body>
 </html>

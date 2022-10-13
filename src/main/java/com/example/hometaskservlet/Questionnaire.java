@@ -12,10 +12,10 @@ import java.util.Map;
 
 @WebServlet("/login")
 public class Questionnaire extends HttpServlet {
-    public static Map<Integer, String> statisticOfIE = new HashMap<>();
-    public static Map<Integer, String> statisticOfChromeE = new HashMap<>();
-    public static Map<Integer, String> statisticOCashYes = new HashMap<>();
-    public static Map<Integer, String> statisticOfDevtoolsYes = new HashMap<>();
+    public static Map<Integer, String> statisticOfIE;
+    public static Map<Integer, String> statisticOfChromeE;
+    public static Map<Integer, String> statisticOCashYes;
+    public static Map<Integer, String> statisticOfDevtoolsYes;
 
 
     public static int a = 0;
@@ -34,15 +34,15 @@ public class Questionnaire extends HttpServlet {
 
 
             if ("a".equals(q1)) {
-                statisticOfIE.put(a + 1, "Internet Explorer");
+                a++;
             } else {
-                statisticOfChromeE.put(b + 1, "Gogle Chrome");
+                b++;
             }
             if ("c".equals(q3)) {
-                statisticOCashYes.put(c + 1, "statisticOCashYes");
+                c++;
             }
             if ("e".equals(q4)) {
-                statisticOfDevtoolsYes.put(f + 1, "statisticOfВDevtoolsYes");
+                f++;
             }
         }
 

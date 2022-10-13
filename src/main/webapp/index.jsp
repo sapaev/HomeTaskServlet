@@ -1,8 +1,10 @@
 <%@ page import="com.example.hometaskservlet.Questionnaire" %>
+<%@page contentType="text/html; charset=UTF-8" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Тест</title>
 </head>
 <body>
@@ -31,8 +33,8 @@
     <label><input type="radio" name="cash" value="d"> Нет</label>
     <Br>
     <h2>Используете ли Вы консоль разработчика:</h2><Br>
-    <label><input type="radio" name="devtools" value="e"> Да</label><
-    Br>
+    <label><input type="radio" name="devtools" value="e"> Да</label>
+    <Br>
     <label><input type="radio" name="devtools" value="f"> Нет</label>
     <Br>
     <label><input type="submit" name="send" length="50"></label>
@@ -42,20 +44,19 @@
 Каким браузером в основном пользуются:
 <Br>
 GoogleChrome:
-<% int sizeOfChrome = Questionnaire.statisticOfChromeE.size();
-    System.out.println(sizeOfChrome); %>
+<%out.println(Questionnaire.b); %>
 <Br>
 InternetExplorer:
-<% int sizeOfIE = Questionnaire.statisticOfIE.size(); %>
-<%System.out.println(sizeOfIE); %>
+
+<%out.println(Questionnaire.a); %>
 <Br>
 Чиститят ли кэш перед работой:
-<% int cleanCash = Questionnaire.statisticOCashYes.size(); %>
-<%System.out.println(cleanCash); %>
+
+<%out.println(Questionnaire.c); %>
 <Br>
 Используют ли консоль разработчика:
-<% int devTools = Questionnaire.statisticOfDevtoolsYes.size(); %>
-<% System.out.println(devTools); %>
+
+<% out.println(Questionnaire.f); %>
 <br>Click this link to <a href="/login?a=exit">Back</a>
 <% } %>
 </body>
